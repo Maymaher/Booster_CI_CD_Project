@@ -12,9 +12,9 @@ pipeline {
                    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'mypass', usernameVariable: 'myname')])
                    {
                     sh """
-                    docker build . -t maimaher/myimage4
+                    docker build . -t maimaher/myimage5
                     docker login --username ${myname} --password ${mypass}
-                    docker push maimaher/myimage4
+                    docker push maimaher/myimage5
                     
                     """
                    }
@@ -27,7 +27,7 @@ pipeline {
                    {
                    
                    sh """
-                    docker run -d -p 3000:3000 maimaher/myimage4
+                    docker run -d -p 3000:3000 maimaher/myimage5
                     """
                    }
                    
