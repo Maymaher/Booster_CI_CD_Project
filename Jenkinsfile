@@ -12,7 +12,7 @@ pipeline {
                    withCredentials([usernamePassword(credentialsId: 'jenkins', passwordVariable: 'mypass', usernameVariable: 'myname')])
                    {
                     sh """
-                    docker build . -t mai/myimage:1.0
+                    docker build . -t maimaher/myimage4
                     docker login --username ${myname} --password ${mypass}
                     docker push mai/myimage:1.0
                     
@@ -27,7 +27,7 @@ pipeline {
                    {
                    
                    sh """
-                    docker run -d -p 3000:3000 mai/myimage:1.0
+                    docker run -d -p 3000:3000 maimaher/myimage4
                     """
                    }
                    
