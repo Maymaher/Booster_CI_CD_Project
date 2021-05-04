@@ -9,7 +9,7 @@ pipeline {
         }
          stage('CI') {
             steps {
-                   withCredentials([usernamePassword(credentialsId: 'jenkins', passwordVariable: 'mypass', usernameVariable: 'myname')])
+                   withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'mypass', usernameVariable: 'myname')])
                    {
                     sh """
                     docker build . -t maimaher/myimage4
@@ -23,7 +23,7 @@ pipeline {
         
         stage('CD') {
             steps {
-                   withCredentials([usernamePassword(credentialsId: 'jenkins', passwordVariable: 'mypass', usernameVariable: 'myname')])
+                   withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'mypass', usernameVariable: 'myname')])
                    {
                    
                    sh """
