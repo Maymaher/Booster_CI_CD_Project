@@ -14,7 +14,7 @@ pipeline {
                     sh """
                     docker build . -t maimaher/myimage4
                     docker login --username ${myname} --password ${mypass}
-                    docker push mai/myimage:1.0
+                    docker push maimaher/myimage4
                     
                     """
                    }
