@@ -27,7 +27,7 @@ pipeline {
                    {
                    
                    sh """
-                    docker run -d -p 3000:3000 maimaher/myimage5
+                    docker run -d -p 8000:8000 maimaher/myimage5
                     """
                    }
                    
